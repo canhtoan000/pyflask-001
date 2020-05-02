@@ -63,17 +63,17 @@ def giaiptb2():
         x2 = -b/ (2 * a)
         str = "Co 2 nghiem"
         kq = { "Trang Thai" : str , "He So" : (x1, x2) }
-    else if delta > 0 :
+    elif delta > 0 :
         x1 == -b + math.sqrt(delta) /(2 * a)
         x2 == -b - math.sqrt(delta) /(2 * a)
         str = "Co 2 nghiem"
         kq = { "Trang Thai" : str , "He So" : (x1, x2) }
-    else if a + b + c == 0 :
+    elif a + b + c == 0 :
         x1 == 1
         x2 == c/a
         str = "Co 2 nghiem"
         kq = { "Trang Thai" : str , "He So" : (x1, x2) }
-    else if a - b + c == 0 :
+    elif a - b + c == 0 :
         x1 == -1
         x2 == -c/a
         str = "Co 2 nghiem"
