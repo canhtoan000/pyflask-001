@@ -43,24 +43,16 @@ def giaiptb1():
     query_parameters = request.args
     a = query_parameters.get("a")
     b = query_parameters.get("b")
+    c = query_parameters.get("c")
 
-    a = int(a)
-    b = int(b)
+    a = float(a)
+    b = float(b)
+    c = float(c)
 
-    str = "khong co nghiem"
+    str = "chưa biết có nghiệm hay không ! "
     
-    kq = { "tt" : str }
-
-    if a == 0 and b == 0:
-        str = "VSN"
-        kq = { "tt" : str }
-    elif a != 0:
-        x =  -b/a
-        str = "co 1 nghiem"
-        kq = { "tt" : str , "x" : x}
-    else:
-        str = "KoCoN"
-        kq = { "tt" : str }
+    kq = { "Trạng thái" : str , "Hệ số" : (a, b, c) }
+    
     return jsonify(kq)
 
 class Parameters(Resource):
