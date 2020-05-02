@@ -9,7 +9,7 @@ from flask_restful import Resource, Api
 from sqlalchemy import create_engine
 from json import dumps
 from flask import jsonify
-
+import math
 
 app = Flask(__name__)
 #db_connect = create_engine('sqlite:///dsNhanVien.db')
@@ -48,11 +48,39 @@ def giaiptb2():
     a = float(a)
     b = float(b)
     c = float(c)
+    
+    delta = b*b - 4ac
 
     str = "chưa biết có nghiệm hay không ! "
     
-    kq = { "Trạng thái" : str , "Hệ số" : (a, b, c) }
+    kq = { "Trạng thái" : str , "Hệ Số" : (a, b, c) }
     
+    if delta < 0 :
+        str = "Vo Nghiem"
+        kq = { "Trang Thai" : str }
+    else delta = 0 :
+        x1 = x2 = -b/2a
+        str = "Co 2 nghiem"
+        kq = { "Trang Thai" : str , "He So" : (x1, x2) }
+    else delta > 0 :
+        x1 = -b + math.sqrt(delta) /2a
+        x2 = -b - math.sqrt(delta) /2a
+        str = "Co 2 nghiem"
+        kq = { "Trang Thai" : str , "He So" : (x1, x2) }
+    else a + b + c = 0 :
+        x1 = 1
+        x2 = c/a
+        str = "Co 2 nghiem"
+        kq = { "Trang Thai" : str , "He So" : (x1, x2) }
+    else a - b + c = 0 :
+        x1 = -1
+        x2 = -c/a
+        str = "Co 2 nghiem"
+        kq = { "Trang Thai" : str , "He So" : (x1, x2) }
+    else :
+        str = "Ko co nghiem"
+        kq = { "Trang Thai" : str }
+        
     return jsonify(kq)
 
 class Parameters(Resource):
