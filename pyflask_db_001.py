@@ -38,8 +38,8 @@ def api_filter():
     query_parameters = request.args
     return jsonify(query_parameters)
 
-@app.route('/giaiptb1', methods=['GET'])
-def giaiptb1():
+@app.route('/giaiptb2', methods=['GET'])
+def giaiptb2():
     query_parameters = request.args
     a = query_parameters.get("a")
     b = query_parameters.get("b")
