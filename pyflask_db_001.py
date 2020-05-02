@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def  index():
-    return "<h1> Flask DB 001 - Connecting !!! </h1>"
+    return "<h1> Ko có gì cả </h1>"
 
 @app.route('/login', methods=['GET', 'POST'])
 def  login():
