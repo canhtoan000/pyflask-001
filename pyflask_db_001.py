@@ -58,7 +58,7 @@ def giaiptb2():
     if delta < 0 :
         str = "Vo Nghiem"
         kq = { "Trang Thai" : str }
-    else if delta == 0:
+    elif delta == 0:
         x1 = -b/ (2 * a)
         x2 = -b/ (2 * a)
         str = "Co 2 nghiem"
