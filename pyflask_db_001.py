@@ -49,7 +49,7 @@ def giaiptb2():
     b = float(b)
     c = float(c)
     
-    delta = b*b - 4ac
+    delta = b*b - (4 * a * c)
 
     str = "chưa biết có nghiệm hay không ! "
     
